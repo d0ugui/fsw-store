@@ -1,31 +1,40 @@
 "use client";
 
 import { Product } from "@prisma/client";
-import { ReactNode, createContext } from "react";
+import { ReactNode, createContext, useState } from "react";
 
-interface CartProducts extends Product {
+interface CartProduct extends Product {
   quantity: number;
 }
 
 interface ICartContext {
-  products: CartProducts[];
+  products: CartProduct[];
   cartTotalPrice: number;
   cartBasePrice: number;
   cartTotalDiscount: number;
+  addProductsToCart: (product: CartProduct) => void;
 }
 
-const CartContext = createContext<ICartContext>({
+export const CartContext = createContext<ICartContext>({
   products: [],
   cartTotalPrice: 0,
   cartBasePrice: 0,
   cartTotalDiscount: 0,
+  addProductsToCart: () => {},
 });
 
 const CartProvider = ({ children }: { children: ReactNode }) => {
+  const [products, setProducts] = useState<CartProduct[]>([]);
+
+  const addProductsToCart = (product: CartProduct) => {
+    setProducts((prevState) => [...prevState, product]);
+  };
+
   return (
     <CartContext.Provider
       value={{
-        products: [],
+        products,
+        addProductsToCart,
         cartTotalPrice: 0,
         cartBasePrice: 0,
         cartTotalDiscount: 0,
