@@ -24,7 +24,9 @@ export default function RootLayout({
         <div className="flex h-full flex-col">
           <AuthProvider>
             <CartProvider>
-              <Header />
+              <div className="m-auto flex w-full max-w-[1440px]">
+                <Header />
+              </div>
               <div className="flex-1">{children}</div>
               <Footer />
             </CartProvider>
