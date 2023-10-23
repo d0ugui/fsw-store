@@ -43,7 +43,7 @@ export default async function Home() {
         className="hidden md:flex"
       />
 
-      <div className="px-5">
+      <div className="px-5 md:m-auto md:w-full md:max-w-[1440px] xl:px-[6.25rem]">
         <Categories />
       </div>
 

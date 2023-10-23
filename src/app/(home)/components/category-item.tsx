@@ -9,7 +9,7 @@ interface ICategoryItem {
 
 export const CategoryItem = ({ category }: ICategoryItem) => {
   return (
-    <Link href={`/category/${category.slug}`}>
+    <Link href={`/category/${category.slug}`} className="md:flex-1">
       <Badge
         variant="outline"
         className="flex items-center justify-center gap-2 rounded-lg py-3"
