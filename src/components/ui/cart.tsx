@@ -2,8 +2,10 @@ import { computeProductTotalPrice } from "@/helpers/product";
 import { CartContext } from "@/providers/cart";
 
 import { createCheckout } from "@/actions/checkout";
+import { createOrder } from "@/actions/order";
 import { loadStripe } from "@stripe/stripe-js";
 import { ShoppingCartIcon } from "lucide-react";
+import { useSession } from "next-auth/react";
 import { useContext } from "react";
 import { Badge } from "./badge";
 import { Button } from "./button";
@@ -12,6 +14,7 @@ import { ScrollArea } from "./scroll-area";
 import { Separator } from "./separator";
 
 const Cart = () => {
+  const { data } = useSession();
   const {
     products,
     cartBasePrice,
@@ -23,6 +26,12 @@ const Cart = () => {
   } = useContext(CartContext);
 
   const handleFinishPurchaseClick = async () => {
+    if (!data?.user) {
+      return;
+    }
+
+    await createOrder(products, (data?.user as any).id);
+
     const checkout = await createCheckout(products);
 
     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
