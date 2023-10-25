@@ -15,7 +15,7 @@ const OrderProductItem = ({ orderProduct }: IOrderProductItem) => {
 
   return (
     <div className="flex items-center gap-4">
-      <div className="flex h-[77px] w-[77px] items-center justify-center rounded-lg bg-accent">
+      <div className="flex h-[77px] w-[100px] items-center justify-center rounded-lg bg-accent">
         <Image
           src={orderProduct.product.imageUrls[0]}
           width={0}
@@ -43,7 +43,7 @@ const OrderProductItem = ({ orderProduct }: IOrderProductItem) => {
 
             {productWithTotalPrice.discountPercentage > 0 && (
               <p className="text-xs line-through opacity-60">
-                {Number(productWithTotalPrice.basePrice).toFixed(2)}
+                R$ {Number(productWithTotalPrice.basePrice).toFixed(2)}
               </p>
             )}
           </div>
