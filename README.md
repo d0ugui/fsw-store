@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://i.ibb.co/Gdy6767/fsw-store.gif" alt="FSW Store" border="0">
+    <a href="https://i.ibb.co/Gdy6767/fsw-store.gif"><img src="https://i.ibb.co/Gdy6767/fsw-store.gif" alt="FSW Store" border="0"></a>
 </h1>
 
 ## 📖 About
@@ -9,6 +9,17 @@ FSW Store is a simple e-commerce website where you can buy some products. Built 
 ## 🧪 Technologies
 
 [![My Skills](https://skillicons.dev/icons?i=nextjs,tailwind,ts,prisma,supabase)](https://skillicons.dev)
+
+## Features
+
+- [x] User authentication (NextAuth)
+- [x] Payment Intgration (Stripe API)
+- [x] Manage cart
+- [x] Mobile first
+- [x] Save/Delete cart
+- [x] Database seeder (products, categories & orders)
+- [x] User orders history
+- [-] Desktop layout
 
 ## 🚀 Running the project
 
