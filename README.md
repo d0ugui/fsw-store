@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="/public/fsw-store.gif" alt="FSW Store" border="0">
+  <img src="public/fsw-store.gif" alt="FSW Store" border="0">
 </h1>
 
 ## 📖 About
