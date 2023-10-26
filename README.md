@@ -19,13 +19,13 @@ FSW Store is a simple e-commerce website where you can buy some products. Built 
 - [x] Save/Delete cart
 - [x] Database seeder (products, categories & orders)
 - [x] User orders history
-- [-] Desktop layout
+- [ ] Desktop layout
 
 ## 🚀 Running the project
 
 ```bash
 # Clone repo
-$ git clone https://github.com/d0ugui/mycontacts
+$ git clone https://github.com/d0ugui/fsw-store
 
 # Install deps
 $ cd fsw-store
