@@ -47,17 +47,25 @@ export default async function Home() {
         <Categories />
       </div>
 
-      <div>
+      <div className="md:m-auto md:w-full md:max-w-[1440px] xl:px-[6.25rem]">
         <SectionTitle>Ofertas</SectionTitle>
         <ProductList products={deals} />
       </div>
 
-      <PromoBanner
-        src="/banner-home-02.png"
-        alt="Até 55% de descontos em mouses!"
-      />
+      <div className="flex xl:m-auto xl:grid xl:w-full xl:max-w-[1440px] xl:grid-cols-2 xl:gap-[35px] xl:px-[6.25rem]">
+        <PromoBanner
+          src="/banner-home-02.png"
+          alt="Até 55% de descontos em mouses!"
+        />
 
-      <div>
+        <PromoBanner
+          src="/banner-home-03.png"
+          alt="Até 20% de descontos em fones!"
+          className="hidden xl:flex"
+        />
+      </div>
+
+      <div className="md:m-auto md:w-full md:max-w-[1440px] xl:px-[6.25rem]">
         <SectionTitle>Teclados</SectionTitle>
         <ProductList products={keyboards} />
       </div>
@@ -65,9 +73,18 @@ export default async function Home() {
       <PromoBanner
         src="/banner-home-03.png"
         alt="Até 20% de descontos em fones!"
+        className="xl:hidden"
       />
 
-      <div className="mt-8">
+      <div className="xl:m-auto xl:w-full xl:max-w-[1440px] xl:px-[6.25rem]">
+        <PromoBanner
+          src="/banner-desktop-home-02.png"
+          alt="Frete grátis para todo o Brasil!"
+          className="hidden xl:flex"
+        />
+      </div>
+
+      <div className="mt-8 md:m-auto md:w-full md:max-w-[1440px] xl:px-[6.25rem]">
         <SectionTitle>Mouses</SectionTitle>
         <ProductList products={mouses} />
       </div>

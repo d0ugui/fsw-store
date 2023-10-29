@@ -6,7 +6,7 @@ export const PromoBanner = ({ className, ...props }: ImageProps) => {
     <Image
       height={0}
       width={0}
-      className={twMerge("h-auto w-full", className)}
+      className={twMerge("h-auto w-full px-5 xl:px-0", className)}
       sizes="100vw"
       {...props}
     />
