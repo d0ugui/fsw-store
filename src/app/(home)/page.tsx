@@ -76,15 +76,14 @@ export default async function Home() {
         className="xl:hidden"
       />
 
-      <div className="xl:m-auto xl:w-full xl:max-w-[1440px] xl:px-[6.25rem]">
+      <div className="hidden xl:m-auto xl:flex xl:w-full xl:max-w-[1440px] xl:px-[6.25rem]">
         <PromoBanner
           src="/banner-desktop-home-02.png"
           alt="Frete grátis para todo o Brasil!"
-          className="hidden xl:flex"
         />
       </div>
 
-      <div className="mt-8 md:m-auto md:w-full md:max-w-[1440px] xl:px-[6.25rem]">
+      <div className=" md:m-auto md:w-full md:max-w-[1440px] xl:px-[6.25rem]">
         <SectionTitle>Mouses</SectionTitle>
         <ProductList products={mouses} />
       </div>

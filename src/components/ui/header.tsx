@@ -48,7 +48,7 @@ const Header = () => {
   const isAuthenticated = status === "authenticated";
 
   return (
-    <Card className="flex flex-1 items-center justify-between p-[1.875rem] md:border-none md:py-10 xl:px-[6.25rem]">
+    <Card className="flex flex-1 items-center justify-between p-[1.875rem] md:m-auto md:w-full md:max-w-[90rem] md:border-none md:py-10 xl:px-[6.25rem]">
       <div className="md:hidden">
         <Sheet>
           <SheetTrigger asChild>

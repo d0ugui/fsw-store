@@ -17,7 +17,7 @@ const ProductImages = ({ imageUrls, name }: IProductImages) => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex h-[380px] w-full items-center justify-center bg-accent">
+      <div className="relative flex h-[380px] w-full items-center justify-center bg-accent xl:h-[670px] xl:w-[736px] xl:rounded-lg">
         <Image
           src={currentImage}
           alt={name}
@@ -31,11 +31,11 @@ const ProductImages = ({ imageUrls, name }: IProductImages) => {
         />
       </div>
 
-      <div className="mt-8 grid grid-cols-4 gap-4 px-5">
+      <div className="mt-8 grid grid-cols-4 gap-4 px-5 xl:absolute xl:flex xl:flex-col">
         {imageUrls.map((imageUrl) => (
           <button
             key={imageUrl}
-            className={`flex h-[100px] items-center justify-center rounded-lg bg-accent ${
+            className={`flex h-[100px] items-center justify-center rounded-lg bg-accent xl:h-[77px] xl:w-[77px] xl:bg-[#0B0B0B] ${
               imageUrl === currentImage &&
               "border-2 border-solid border-primary"
             }`}
