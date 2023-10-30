@@ -1,5 +1,6 @@
 "use client";
 
+import { CartContext } from "@/providers/cart";
 import {
   HomeIcon,
   ListOrderedIcon,
@@ -13,6 +14,7 @@ import {
 } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useContext } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Button } from "./button";
 import { Card } from "./card";
@@ -36,6 +38,7 @@ import {
 
 const Header = () => {
   const { status, data } = useSession();
+  const { products } = useContext(CartContext);
 
   const handleLoginClick = async () => {
     await signIn();
@@ -218,17 +221,29 @@ const Header = () => {
           </DropdownMenu>
         </div>
 
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button size="icon" variant="outline">
-              <ShoppingCartIcon />
-            </Button>
-          </SheetTrigger>
+        <div className="relative">
+          <Sheet>
+            <SheetTrigger asChild>
+              <div>
+                <Button size="icon" variant="outline">
+                  <ShoppingCartIcon />
+                </Button>
 
-          <SheetContent className="w-[350px]">
-            <Cart />
-          </SheetContent>
-        </Sheet>
+                {products.length > 0 && (
+                  <div className="absolute bottom-[2px] right-[2px] flex h-[18px] w-[18px] cursor-pointer items-center justify-center rounded-full bg-white">
+                    <p className="text-center text-xs font-semibold text-black">
+                      {products.length}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </SheetTrigger>
+
+            <SheetContent className="w-[350px]">
+              <Cart />
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </Card>
   );
