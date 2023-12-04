@@ -1,5 +1,5 @@
 <h1 align="center">
-    <a href="https://i.ibb.co/Gdy6767/fsw-store.gif"><img src="https://i.ibb.co/Gdy6767/fsw-store.gif" alt="FSW Store" border="0"></a>
+    <a href="https://i.imgur.com/kSGliEL.gif"><img src="https://i.imgur.com/kSGliEL.gif" alt="FSW Store" border="0"></a>
 </h1>
 
 ## 📖 About
